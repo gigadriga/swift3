@@ -1,0 +1,185 @@
+// enum с разными типами RawValue
+enum Social: String {
+    case Vk = "Vkontakte"
+    case Tg = "Telegram"
+}
+
+enum Direction: String {
+    case Left = "Left"
+    case Right = "Right"
+    case Up = "Up"
+    case Down = "Down"
+}
+
+enum Months: Int {
+    case January = 1
+    case February = 2
+    case March = 3
+    case April = 4
+    case May = 5
+    case June = 6
+    case July = 7
+    case August = 8
+    case September = 9
+    case October = 10
+    case November = 11
+    case December = 12
+}
+
+enum Values: Int {
+    case Metre = 100
+    case Сentimetre = 1
+}
+
+// enum для заполнения полей структуры
+//пол
+enum Gender {
+    case Male
+    case Female
+}
+//категория возраста
+enum AgeCategory {
+    case Teenager
+    case Adult
+    case Elderly
+}
+//стаж
+enum WorkExperience {
+    case Beginner
+    case Intermediate
+    case Advanced
+}
+
+// все цвета радуги
+enum RainbowColors {
+    case Red
+    case Orange
+    case Yellow
+    case Green
+    case Blue
+    case Indigo
+    case Violet
+}
+
+// Функция для вывода содержимого enum в консоль
+func printEnumCases() {
+    enum Fruits {
+        case Apple
+        case Pineapple
+        case Lemon
+    }
+    
+    enum Colors {
+        case Red
+        case Green
+        case Blue
+    }
+    
+    enum Planets {
+        case Earth
+        case Mars
+        case Neptune
+    }
+    
+    var Fruit = Fruits.Apple
+    var Color = Colors.Green
+    var Planet = Planets.Earth
+    
+    
+    
+    switch Fruit {
+    case .Apple:
+        print("Apple", terminator: " ")
+    case .Pineapple:
+        print("Pineapple", terminator: " ")
+    case .Lemon:
+        print("Lemon", terminator: " ")
+    }
+    switch Color {
+    case .Green:
+        print("Green")
+    case .Red:
+        print("Red")
+    case .Blue:
+        print("Blue")
+    }
+    
+
+    Color = .Red
+    Planet = .Mars
+    
+    switch Color {
+    case .Green:
+        print("Green", terminator: " ")
+    case .Red:
+        print("Red", terminator: " ")
+    case .Blue:
+        print("Blue", terminator: " ")
+    }
+    
+    switch Planet {
+    case .Earth:
+        print("Earth")
+    case .Mars:
+        print("Mars")
+    case .Neptune:
+        print("Neptune")
+    }
+}
+
+printEnumCases()
+
+// Функция выставления оценок ученикам
+enum Score: String {
+    case A = "Отлично"
+    case B = "Хорошо"
+    case C = "Удовлетворительно"
+    case D = "Неудовлетворительно"
+}
+
+func assignScore(for student: String, with score: Score) {
+    var value: Int = 0
+    
+    switch score {
+    case .A:
+        value = 5
+    case .B:
+        value = 4
+    case .C:
+        value = 3
+    case .D:
+        value = 2
+    }
+    
+    print("Студенту \(student) выставлена оценка \(value)")//вывод оценки ученику
+}
+
+assignScore(for: "Алексеев Алексей", with: .A)
+
+// Создаем метод для вывода автомобилей, стоящих в гараже
+let myGarage = Garage()
+myGarage.cars = [.BMW, .Chevrolet, .Audi]
+
+enum Car {
+    case BMW
+    case Chevrolet
+    case Audi
+}
+
+class Garage {
+    var cars: [Car] = []
+    
+    func printCars() {
+        for car in cars {
+            switch car {
+            case .BMW:
+                print("BMW")
+            case .Chevrolet:
+                print("Chevrolet")
+            case .Audi:
+                print("Audi")
+            }
+        }
+    }
+}
+myGarage.printCars()
